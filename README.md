@@ -274,8 +274,4 @@ Processed Video
 
 If this project helped or inspired you, please consider giving it a ⭐ on GitHub.
 
-<br>
-
-**Built with ❤️ using Python • Flask • OpenCV • YOLOv8**
-
 </div>
