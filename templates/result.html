@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartCityEye | Analysis Complete</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+
+            background:
+            linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),
+            url("{{ url_for('static', filename='images/traffic-bg.jpeg') }}");
+
+            background-size:cover;
+            background-position:center;
+            font-family:'Poppins',sans-serif;
+        }
+
+        .result-card{
+
+            width:900px;
+            max-width:92%;
+
+            background:rgba(22,22,22,.92);
+
+            border-radius:25px;
+
+            padding:35px;
+
+            color:white;
+
+            text-align:center;
+
+            box-shadow:0 20px 60px rgba(0,0,0,.5);
+
+            border:1px solid rgba(25,255,138,.2);
+
+        }
+
+        h1{
+
+            color:#19ff8a;
+
+            margin-bottom:8px;
+
+            font-size:40px;
+
+        }
+
+        p{
+
+            color:#d0d0d0;
+
+            margin-bottom:25px;
+
+        }
+
+        video{
+
+            width:100%;
+
+            border-radius:15px;
+
+            border:2px solid #080808;
+
+            margin-bottom:25px;
+
+        }
+
+        .buttons{
+
+            display:flex;
+
+            justify-content:center;
+
+            gap:20px;
+
+            flex-wrap:wrap;
+
+        }
+
+        .btn{
+
+            text-decoration:none;
+
+            background:#09310e;
+
+            color:black;
+
+            padding:14px 28px;
+
+            border-radius:50px;
+
+            font-weight:600;
+
+            transition:.3s;
+
+        }
+
+        .btn:hover{
+
+            transform:translateY(-3px);
+
+            box-shadow:0 0 20px rgba(25,255,138,.5);
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="result-card">
+
+    <h1>✅ Analysis Complete</h1>
+
+    <p>Your traffic video has been processed successfully.</p>
+
+    <video controls autoplay>
+
+        <source src="{{ url_for('output_video', filename='processed_video.mp4') }}" type="video/mp4">
+
+        Your browser does not support video playback.
+
+    </video>
+
+    <div class="buttons">
+
+        <a class="btn"
+           href="{{ url_for('output_video', filename='processed_video.mp4') }}"
+           download>
+            Download Video ⬇
+        </a>
+
+        <a class="btn"
+           href="/">
+            Analyze Another Video
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>SmartCityEye</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+    <h1>🚦 SmartCityEye</h1>
+
+    <p class="subtitle">
+        AI Powered Traffic Monitoring System
+    </p>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+    <input
+        type="file"
+        id="videoInput"
+        name="video"
+        accept="video/*"
+        hidden
+        required
+    >
+
+    <div class="drop-area" id="dropArea">
+
+        <div class="upload-content">
+
+            <div class="icon">📹</div>
+
+            <h2 id="fileName">Drag & Drop Video</h2>
+
+            <p>or click to browse</p>
+
+            <small>MP4 • AVI • MOV</small>
+
+        </div>
+
+    </div>
+
+    <button type="submit">
+        🚀 Analyze Traffic
+    </button>
+
+</form>
+
+    <div class="features">
+
+        <div class="card">
+            🚗
+            <h3>Vehicle Detection</h3>
+        </div>
+
+        <div class="card">
+            🎯
+            <h3>Object Tracking</h3>
+        </div>
+
+        <div class="card">
+            📊
+            <h3>Traffic Analytics</h3>
+        </div>
+
+        <div class="card">
+            🎥
+            <h3>Processed Video</h3>
+        </div>
+
+    </div>
+
+    <footer>
+
+        Powered by
+
+        <span>YOLOv8</span>
+
+        •
+
+        <span>OpenCV</span>
+
+        •
+
+        <span>Flask</span>
+
+        •
+
+        <span>Python</span>
+
+    </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

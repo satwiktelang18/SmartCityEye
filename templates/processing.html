@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartCityEye | AI Processing</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),
+url("{{ url_for('static', filename='images/traffic-bg.jpeg') }}");
+
+background-size:cover;
+background-position:center;
+
+overflow:hidden;
+
+}
+
+.card{
+
+width:700px;
+max-width:92%;
+
+padding:45px;
+
+border-radius:25px;
+
+background:rgba(20,20,20,.93);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(25,255,138,.18);
+
+box-shadow:0 20px 60px rgba(0,0,0,.5);
+
+color:white;
+
+}
+
+.logo{
+
+font-size:42px;
+
+text-align:center;
+
+font-weight:700;
+
+color:#ffffff;
+
+margin-bottom:8px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#d4d4d4;
+
+margin-bottom:35px;
+
+}
+
+.spinner{
+
+width:75px;
+
+height:75px;
+
+border-radius:50%;
+
+border:7px solid rgba(255,255,255,.15);
+
+border-top:7px solid #19ff8a;
+
+margin:auto;
+
+animation:spin 1s linear infinite;
+
+margin-bottom:35px;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+.progress{
+
+width:100%;
+
+height:10px;
+
+background:#333;
+
+border-radius:50px;
+
+overflow:hidden;
+
+margin-bottom:35px;
+
+}
+
+.bar{
+
+height:100%;
+
+width:0%;
+
+background:#19ff8a;
+
+transition:width .8s ease;
+
+}
+
+.task{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:12px 5px;
+
+font-size:18px;
+
+color:#cfcfcf;
+
+transition:.4s;
+
+}
+
+.icon{
+
+font-size:22px;
+
+width:28px;
+
+text-align:center;
+
+}
+
+.done{
+
+color:#19ff8a;
+
+font-weight:600;
+
+}
+
+.current{
+
+color:white;
+
+font-weight:600;
+
+}
+
+.footer{
+
+margin-top:35px;
+
+text-align:center;
+
+font-size:14px;
+
+color:#bdbdbd;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="logo">
+SmartCityEye
+</div>
+
+<div class="subtitle">
+
+AI Powered Traffic Analysis
+
+</div>
+
+<div class="spinner"></div>
+
+<div class="progress">
+
+<div class="bar" id="bar"></div>
+
+</div>
+
+<div class="task current" id="t0">
+<span class="icon">⏳</span>
+<span>Loading AI Model...</span>
+</div>
+
+<div class="task" id="t1">
+<span class="icon">⚪</span>
+<span>Initializing Detector...</span>
+</div>
+
+<div class="task" id="t2">
+<span class="icon">⚪</span>
+<span>Detecting Vehicles...</span>
+</div>
+
+<div class="task" id="t3">
+<span class="icon">⚪</span>
+<span>Assigning Object IDs...</span>
+</div>
+
+<div class="task" id="t4">
+<span class="icon">⚪</span>
+<span>Counting Traffic...</span>
+</div>
+
+<div class="task" id="t5">
+<span class="icon">⚪</span>
+<span>Rendering Output Video...</span>
+</div>
+
+<div class="footer">
+
+Please don't close this page while SmartCityEye processes your traffic video.
+
+</div>
+
+</div>
+<script>
+
+const tasks = [
+    document.getElementById("t0"),
+    document.getElementById("t1"),
+    document.getElementById("t2"),
+    document.getElementById("t3"),
+    document.getElementById("t4"),
+    document.getElementById("t5")
+];
+
+const delays = [
+    5000, // Loading AI Model
+    5000, // Initializing Detector
+    9000, // Detecting Vehicles
+    9000, // Assigning IDs
+    7000, // Counting Traffic
+    7000  // Rendering Output Video
+];
+
+const bar = document.getElementById("bar");
+
+let i = 0;
+let animationFinished = false;
+let detectorFinished = false;
+
+// ----------------------
+// Animation
+// ----------------------
+
+function nextStep() {
+
+    if (i > 0) {
+
+        tasks[i - 1].classList.remove("current");
+        tasks[i - 1].classList.add("done");
+        tasks[i - 1].querySelector(".icon").textContent = "✔";
+
+    }
+
+    if (i < tasks.length) {
+
+        tasks[i].classList.add("current");
+        tasks[i].querySelector(".icon").textContent = "⏳";
+
+        bar.style.width = ((i + 1) / tasks.length * 100) + "%";
+
+        const delay = delays[i];
+
+        i++;
+
+        setTimeout(nextStep, delay);
+
+    }
+    else {
+
+        animationFinished = true;
+
+        // Make last task green
+        tasks[tasks.length - 1].classList.remove("current");
+        tasks[tasks.length - 1].classList.add("done");
+        tasks[tasks.length - 1].querySelector(".icon").textContent = "✔";
+
+        // Optional message after checklist completes
+        document.querySelector(".footer").innerHTML =
+        "⏳ <strong>Finalizing AI Analysis...</strong><br>Please wait while the output video is prepared.";
+
+        checkRedirect();
+
+    }
+
+}
+
+// ----------------------
+// Poll Flask every second
+// ----------------------
+
+function checkStatus() {
+
+    fetch("/status")
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            detectorFinished = data.finished;
+
+            checkRedirect();
+
+            if (!detectorFinished) {
+
+                setTimeout(checkStatus, 1000);
+
+            }
+
+        })
+
+        .catch(() => {
+
+            setTimeout(checkStatus, 1000);
+
+        });
+
+}
+
+// ----------------------
+// Redirect only when BOTH
+// animation and detector
+// are complete
+// ----------------------
+
+function checkRedirect() {
+
+    if (animationFinished && detectorFinished) {
+
+        window.location.href = "/result";
+
+    }
+
+}
+
+nextStep();
+checkStatus();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated videos
+output/*.mp4
+
+# Uploaded videos
+uploads/*.mp4
+
+# Keep folders even if empty
+!output/.gitkeep
+!uploads/.gitkeep
+
+# Temporary status file
+output/status.txt
