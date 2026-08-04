@@ -2,8 +2,6 @@
 
 <p align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=28&pause=1000&color=00FF99&center=true&vCenter=true&width=900&lines=AI+Traffic+Monitoring+System;YOLOv8+Object+Detection;Multi-Object+Tracking;Vehicle+Counting+Dashboard;Built+with+Python+%7C+Flask+%7C+OpenCV"/>
-
 </p>
 
 <p align="center">
