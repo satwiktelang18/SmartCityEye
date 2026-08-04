@@ -87,7 +87,7 @@ assets/processing.png
 
 ## 🎥 Final Result
 
-<img width="1470" height="791" alt="Screenshot 2026-08-04 at 2 08 48 PM" src="https://github.com/user-attachments/assets/cf4ce3f9-2fe0-42ad-a7a8-a4584f33f77f" />
+<img width="1470" height="797" alt="Screenshot 2026-08-04 at 2 14 35 PM" src="https://github.com/user-attachments/assets/f896b256-049a-45df-82f5-623b6d41ee8a" />
 
 ```
 assets/result.png
