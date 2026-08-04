@@ -150,7 +150,7 @@ SmartCityEye
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/SmartCityEye.git
+git clone https://github.com/satwiktelang18/SmartCityEye.git
 
 cd SmartCityEye
 ```
