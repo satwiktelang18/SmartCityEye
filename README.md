@@ -11,7 +11,7 @@
 
 <br/>
 
-# 🚦 SmartCityEye - AI Powered Traffic Monitoring System
+# SmartCityEye - AI Powered Traffic Monitoring System 🚦
 
 **An AI-powered traffic monitoring application that detects, tracks, and counts vehicles from uploaded videos using YOLOv8, OpenCV, and Flask through a modern glassmorphic web interface.**
 
