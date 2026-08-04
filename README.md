@@ -1,45 +1,45 @@
-# SmartCityEye - AI Powered Traffic Monitoring & Vehicle Counting using YOLOv8 🚦 
+<div align="center">
 
-<p align="center">
+<img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+<img src="https://img.shields.io/badge/YOLOv8-Ultralytics-7C3AED?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white"/>
+<img src="https://img.shields.io/badge/Flask-Web%20Framework-000000?style=for-the-badge&logo=flask&logoColor=white"/>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<img src="https://img.shields.io/badge/Status-Complete-22C55E?style=for-the-badge"/>
 
-</p>
+<br/>
 
-<p align="center">
+# 🚦 SmartCityEye - AI Powered Traffic Monitoring System
 
-<img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python">
-<img src="https://img.shields.io/badge/YOLOv8-Ultralytics-green?style=for-the-badge">
-<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-red?style=for-the-badge&logo=opencv">
-<img src="https://img.shields.io/badge/Flask-Web%20App-black?style=for-the-badge&logo=flask">
-<img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
+**An AI-powered traffic monitoring application that detects, tracks, and counts vehicles from uploaded videos using YOLOv8, OpenCV, and Flask through a modern glassmorphic web interface.**
 
-</p>
-
----
-
-# Overview 📌 
-
-**SmartCityEye** is an AI-powered traffic monitoring system that automatically detects, tracks, and counts vehicles from uploaded traffic videos using **YOLOv8**, **OpenCV**, and **Flask**.
-
-The application assigns a unique ID to every detected object, prevents duplicate counting, displays a real-time dashboard overlay, and generates an annotated output video through a modern web interface.
+</div>
 
 ---
 
-# Features ✨
+## Overview 🔭
 
-- 🚗 Vehicle Detection using YOLOv8
-- 🎯 Multi-Object Tracking with Unique IDs
-- 📊 Live Vehicle Counting Dashboard
-- 👤 Person Detection
-- 🚚 Truck Detection
-- 🚌 Bus Detection
-- 🏍 Motorcycle Detection
-- 🎥 Processed Video Generation
-- 📂 Drag & Drop Video Upload
-- 🌐 Modern Flask Web Interface
-- 📈 FPS Monitoring
-- 🎨 Color-Coded Bounding Boxes
+SmartCityEye is an end-to-end **computer vision application** designed to automate traffic monitoring from recorded videos. Built using **YOLOv8**, **OpenCV**, and **Flask**, the system performs real-time object detection, assigns persistent IDs to tracked vehicles, prevents duplicate counting, and generates an annotated output video with a live analytics dashboard.
+
+The application features a modern drag-and-drop web interface where users can upload traffic footage, visualize the AI processing pipeline, and download the processed result with bounding boxes, confidence scores, FPS monitoring, and live vehicle statistics.
 
 ---
+
+## Features ✨
+
+- **YOLOv8 Object Detection** — accurately detects cars, buses, trucks, motorcycles, and pedestrians
+- **Multi-Object Tracking** — assigns persistent IDs to each detected object to prevent duplicate counting
+- **Vehicle Analytics Dashboard** — displays live counts for every supported vehicle class along with total detected objects
+- **Confidence Score Visualization** — overlays detection confidence and unique tracking IDs on every object
+- **Color-Coded Bounding Boxes** — different colors for each object category for improved visualization
+- **Drag & Drop Upload Interface** — modern glassmorphic UI supporting quick video uploads
+- **AI Processing Pipeline** — interactive loading page visualizing every stage of computer vision inference
+- **Processed Video Generation** — exports annotated MP4 videos with all detections rendered frame-by-frame
+- **FPS Monitoring** — displays inference performance while processing videos
+- **Modern Dark Glass UI** — responsive frontend with animated components and traffic-themed design
+
 
 # Application Workflow 🖥️ 
 
