@@ -268,10 +268,14 @@ Processed Video
 
 --- 
 
-If you found this project useful, consider giving it a ⭐ on GitHub!
+<div align="center">
 
-<p align="center">
+## ⭐ Like this project?
 
-Made with ❤️ using Python, Flask, OpenCV & YOLOv8
+If this project helped or inspired you, please consider giving it a ⭐ on GitHub.
 
-</p>
+<br>
+
+**Built with ❤️ using Python • Flask • OpenCV • YOLOv8**
+
+</div>
