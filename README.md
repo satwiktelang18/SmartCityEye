@@ -257,7 +257,7 @@ Processed Video
 
 - YOLOv8s Object Detection
 - Multi-Object Tracking
-- CPU Compatible
+- CPU Compatible ✅
 - Offline Video Processing
 
 ---
