@@ -66,7 +66,7 @@ Processed Video
 
 # Screenshots 📸 
 
-## Home Page
+## Home Page (might improve later)
 <img width="1470" height="799" alt="Screenshot 2026-08-04 at 2 04 54 PM" src="https://github.com/user-attachments/assets/fc63fa7b-5acf-4abc-9d3b-ee15aac14f5e" />
 
 ```
